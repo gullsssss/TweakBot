@@ -20,7 +20,7 @@ def cborka(message):
     btn3 = types.KeyboardButton('Красная фпс ап')
     btn4 = types.KeyboardButton('Розовая')
     btn5 = types.KeyboardButton('Черная')
-    btn6 = typea.KeyboardButton('1243')
+    btn6 = types.KeyboardButton('1243')
     btn7 = types.KeyboardButton('/start')
     markup.row(btn1)
     markup.row(btn2, btn3)
