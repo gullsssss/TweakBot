@@ -1,8 +1,28 @@
 import telebot
 from telebot import types
+from flask import Flask, request
 
 bot = telebot.TeleBot('7653915501:AAHVJzOa7Y8IVck5qzy0i-bRNz1rd08lKyw')
+app = Flask(__name__)
 
+WEBHOOK_URL = 'https://tweakbot.onrender.com/'
+
+bot.remove_webhook()
+bot.set_webhook(url=WEBHOOK_URL)
+
+@app.route('/', methods=['POST'])
+def webhook():
+    if request.headers.get('content-type') == 'application/json':
+        json_string = request.get_data().decode('utf-8')
+        update = telebot.types.Update.de_json(json_string)
+        bot.process_new_updates([update])
+        return '', 200
+    else:
+        return 'Unsupported Media Type', 415
+
+if  __name__ == '_main':
+    app.run(host='0.0.0.0', port=10000)
+    
 @bot.message_handler(commands=['start'])
 def start(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
