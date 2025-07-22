@@ -20,7 +20,7 @@ def cborka(message):
     btn3 = types.KeyboardButton('Красная фпс ап')
     btn4 = types.KeyboardButton('Розовая')
     btn5 = types.KeyboardButton('Черная')
-    btn6 = typea.KeyboardButton('DirectX for mobile')
+    btn6 = typea.KeyboardButton('1243')
     btn7 = types.KeyboardButton('/start')
     markup.row(btn1)
     markup.row(btn2, btn3)
@@ -95,7 +95,7 @@ def forward_message(message):
 
     bot.copy_message(chat_id=message.chat.id, from_chat_id=CHANNEL_ID, message_id=MESSAGE_ID)
 
-@bot.message_handler(func=lambda message: message.text.lower() == 'DirectX for mobile')
+@bot.message_handler(func=lambda message: message.text.lower() == '1243')
 def forward_message(message):
      CHANNEL_ID = -1002416731182
      MESSAGE_ID = 56
