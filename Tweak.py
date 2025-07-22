@@ -97,9 +97,9 @@ def forward_message(message):
 
 @bot.message_handler(func=lambda message: message.text.lower() == 'DirectX for mobile')
 def forward_message(message):
-	CHANNEL_ID = -1002416731182
-	MESSAGE_ID = 56
+     CHANNEL_ID = -1002416731182
+     MESSAGE_ID = 56
 
-bot.copy_message(chat_id=message.chat.id, from_chat_id=CHANNEL_ID, message_id=MESSAGE_ID)
+     bot.copy_message(chat_id=message.chat.id, from_chat_id=CHANNEL_ID, message_id=MESSAGE_ID)
 
 bot.polling(none_stop=True)
